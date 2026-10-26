@@ -46,7 +46,12 @@ Disable-KanaLock
 
 ## Build and test
 
-Requires the .NET SDK.
+Requires the .NET SDK and Microsoft.PowerShell.PlatyPS 1.0.3, which turns
+`docs/cmdlets` into the module's help.
+
+```powershell
+Install-PSResource Microsoft.PowerShell.PlatyPS -Version 1.0.3
+```
 
 ```powershell
 ./build.ps1             # builds into out/KanaLock

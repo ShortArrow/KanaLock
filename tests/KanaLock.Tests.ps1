@@ -33,3 +33,11 @@ Describe 'Get-KanaLock' {
         Get-KanaLock | Should -BeOfType [bool]
     }
 }
+
+Describe 'Help' {
+    It '<_> has a synopsis and an example' -ForEach @('Get-KanaLock', 'Enable-KanaLock', 'Disable-KanaLock') {
+        $help = Get-Help $_ -Full
+        $help.Synopsis | Should -Not -Match "^\s*$_ \["
+        $help.Examples.Example | Should -Not -BeNullOrEmpty
+    }
+}
